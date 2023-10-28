@@ -1,0 +1,14 @@
+Задача; указать команду которая покажет ТОЧНОЕ время создания/модификации файла
+[Sat Oct 28]max@ws01ls --full-time
+total 44
+drwxr-xr-x  2 max max 4096 2023-09-24 14:03:16.114548495 -0400 Desktop
+drwxr-xr-x  2 max max 4096 2023-09-24 14:03:16.114548495 -0400 Documents
+drwxr-xr-x  3 max max 4096 2023-10-22 12:38:13.746651672 -0400 Downloads
+drwxrwxr-x  4 max max 4096 2023-10-22 13:43:40.830729805 -0400 Linux-student
+drwxr-xr-x 12 max max 4096 2023-10-23 05:06:48.424790599 -0400 linux-vm
+drwxr-xr-x  2 max max 4096 2023-09-24 14:03:16.114548495 -0400 Music
+drwxr-xr-x  3 max max 4096 2023-10-22 14:00:40.070750084 -0400 Pictures
+drwxr-xr-x  2 max max 4096 2023-09-24 14:03:16.114548495 -0400 Public
+drwx------  5 max max 4096 2023-10-22 11:58:54.024413453 -0400 snap
+drwxr-xr-x  2 max max 4096 2023-09-24 14:03:16.114548495 -0400 Templates
+drwxr-xr-x  2 max max 4096 2023-09-24 14:03:16.114548495 -0400 Videos
