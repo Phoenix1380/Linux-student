@@ -1,0 +1,6 @@
+Задача: Какой shell по умолчанию у max в нашей лабораторной среде?
+Команда:
+max@ws01:~/Linux-student$ echo $SHELL
+Результат:
+/usr/bin/bash
+
