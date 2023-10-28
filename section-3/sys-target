@@ -1,0 +1,4 @@
+system
+max@ws01:~$ systemctl get-default
+graphical.target
+

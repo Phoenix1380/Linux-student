@@ -1,0 +1,5 @@
+Запустить команду записи в hosts
+max@ws01:~$ echo '172.20.1.1 dev-gateway' | sudo tee -a /etc/hosts
+[sudo] password for max: 
+172.20.1.1 dev-gateway
+
