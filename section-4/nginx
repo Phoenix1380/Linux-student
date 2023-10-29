@@ -1,0 +1,143 @@
+не совсем понятно задание. в задаче стоит установка пакета,
+
+установка
+max@ws01:~/linux-vm/4$ sudo apt install -f nginx
+
+при установке выходит необходимость в установке нескольких других пакетов
+
+
+
+tor : Depends: libevent-2.1-6 (>= 2.1.8-stable) but it is not installable
+       Depends: libssl1.1 (>= 1.1.0) but it is not installable
+       Recommends: tor-geoipdb but it is not going to be installed
+       Recommends: torsocks but it is not going to be installed
+E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+
+при этом  в артефакт нужно внести только команду.
+
+так всё же, нужно только команду, или нужно все же
+установить и все процессы описать?
+
+или запустить ту команду что предлагет программа? тогда она одна, но выдает тот же результат.
+
+РЕШЕНИЕ
+выполнил предлагаемую команду при ошибке
+max@ws01:~/linux-vm/4$ sudo apt --fix-broken install
+прошло успешно
+
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Correcting dependencies... Done
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2 libllvm13
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  tor
+Suggested packages:
+  mixmaster torbrowser-launcher socat apparmor-utils nyx obfs4proxy
+Recommended packages:
+  tor-geoipdb torsocks
+The following packages will be upgraded:
+  tor
+1 upgraded, 0 newly installed, 0 to remove and 26 not upgraded.
+1 not fully installed or removed.
+Need to get 1,665 kB of archives.
+After this operation, 1,094 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu jammy/universe amd64 tor amd64 0.4.6.10-1 [1,665 kB]
+Fetched 1,665 kB in 1s (1,140 kB/s)
+(Reading database ... 205798 files and directories currently installed.)
+Preparing to unpack .../tor_0.4.6.10-1_amd64.deb ...
+Unpacking tor (0.4.6.10-1) over (0.3.2.10-1) ...
+Setting up tor (0.4.6.10-1) ...
+Something or somebody made /var/lib/tor disappear.
+Creating one for you again.
+Something or somebody made /var/log/tor disappear.
+Creating one for you again.
+Created symlink /etc/systemd/system/multi-user.target.wants/tor.service → /lib/s
+ystemd/system/tor.service.
+Processing triggers for man-db (2.10.2-1) ...
+
+после этого снова запустил установку nginx
+max@ws01:~/linux-vm/4$ sudo apt install -f nginx
+
+eading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libflashrom1 libftdi1-2 libllvm13
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  libnginx-mod-http-geoip2 libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libnginx-mod-stream-geoip2 nginx-common nginx-core
+Suggested packages:
+  fcgiwrap nginx-doc
+The following NEW packages will be installed:
+  libnginx-mod-http-geoip2 libnginx-mod-http-image-filter
+  libnginx-mod-http-xslt-filter libnginx-mod-mail libnginx-mod-stream
+  libnginx-mod-stream-geoip2 nginx nginx-common nginx-core
+0 upgraded, 9 newly installed, 0 to remove and 26 not upgraded.
+Need to get 697 kB of archives.
+After this operation, 2,395 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 nginx-common all 1.18.0-6ubuntu14.4 [40.0 kB]
+Get:2 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-http-geoip2 amd64 1.18.0-6ubuntu14.4 [11.9 kB]
+Get:3 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-http-image-filter amd64 1.18.0-6ubuntu14.4 [15.4 kB]
+Get:4 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-http-xslt-filter amd64 1.18.0-6ubuntu14.4 [13.7 kB]
+Get:5 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-mail amd64 1.18.0-6ubuntu14.4 [45.7 kB]
+Get:6 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-stream amd64 1.18.0-6ubuntu14.4 [72.9 kB]
+Get:7 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libnginx-mod-stream-geoip2 amd64 1.18.0-6ubuntu14.4 [10.1 kB]
+Get:8 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 nginx-core amd64 1.18.0-6ubuntu14.4 [484 kB]
+Get:9 http://us.archive.ubuntu.com/ubuntu jammy-updates/main amd64 nginx amd64 1.18.0-6ubuntu14.4 [3,872 B]
+Fetched 697 kB in 1s (607 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package nginx-common.
+(Reading database ... 205802 files and directories currently installed.)
+Preparing to unpack .../0-nginx-common_1.18.0-6ubuntu14.4_all.deb ...
+Unpacking nginx-common (1.18.0-6ubuntu14.4) ...
+Selecting previously unselected package libnginx-mod-http-geoip2.
+Preparing to unpack .../1-libnginx-mod-http-geoip2_1.18.0-6ubuntu14.4_amd64.deb 
+...
+Unpacking libnginx-mod-http-geoip2 (1.18.0-6ubuntu14.4) ...
+Selecting previously unselected package libnginx-mod-http-image-filter.
+Preparing to unpack .../2-libnginx-mod-http-image-filter_1.18.0-6ubuntu14.4_amd6
+4.deb ...
+Unpacking libnginx-mod-http-image-filter (1.18.0-6ubuntu14.4) ...
+Selecting previously unselected package libnginx-mod-http-xslt-filter.
+Preparing to unpack .../3-libnginx-mod-http-xslt-filter_1.18.0-6ubuntu14.4_amd64
+.deb ...
+Unpacking libnginx-mod-http-xslt-filter (1.18.0-6ubuntu14.4) ...
+Selecting previously unselected package libnginx-mod-mail.
+Preparing to unpack .../4-libnginx-mod-mail_1.18.0-6ubuntu14.4_amd64.deb ...
+Unpacking libnginx-mod-mail (1.18.0-6ubuntu14.4) ...
+Selecting previously unselected package libnginx-mod-stream.
+Preparing to unpack .../5-libnginx-mod-stream_1.18.0-6ubuntu14.4_amd64.deb ...
+Unpacking libnginx-mod-stream (1.18.0-6ubuntu14.4) ...
+Selecting previously unselected package libnginx-mod-stream-geoip2.
+Preparing to unpack .../6-libnginx-mod-stream-geoip2_1.18.0-6ubuntu14.4_amd64.de
+b ...
+Unpacking libnginx-mod-stream-geoip2 (1.18.0-6ubuntu14.4) ...
+Selecting previously unselected package nginx-core.
+Preparing to unpack .../7-nginx-core_1.18.0-6ubuntu14.4_amd64.deb ...
+Unpacking nginx-core (1.18.0-6ubuntu14.4) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../8-nginx_1.18.0-6ubuntu14.4_amd64.deb ...
+Unpacking nginx (1.18.0-6ubuntu14.4) ...
+Setting up nginx-common (1.18.0-6ubuntu14.4) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib
+/systemd/system/nginx.service.
+Setting up libnginx-mod-http-xslt-filter (1.18.0-6ubuntu14.4) ...
+Setting up libnginx-mod-http-geoip2 (1.18.0-6ubuntu14.4) ...
+Setting up libnginx-mod-mail (1.18.0-6ubuntu14.4) ...
+Setting up libnginx-mod-http-image-filter (1.18.0-6ubuntu14.4) ...
+Setting up libnginx-mod-stream (1.18.0-6ubuntu14.4) ...
+Setting up libnginx-mod-stream-geoip2 (1.18.0-6ubuntu14.4) ...
+Setting up nginx-core (1.18.0-6ubuntu14.4) ...
+ * Upgrading binary nginx                                                [ OK ] 
+Setting up nginx (1.18.0-6ubuntu14.4) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for ufw (0.36.1-4ubuntu0.1) ...
+
+

@@ -1,0 +1,27 @@
+max@ws01:~$ cd linux-vm/
+max@ws01:~/linux-vm$ cd 4/
+max@ws01:~/linux-vm/4$ sudo dpkg -i tor_0.3.2.10-1_amd64.deb
+[sudo] password for max: 
+Selecting previously unselected package tor.
+(Reading database ... 205760 files and directories currently installed.)
+Preparing to unpack tor_0.3.2.10-1_amd64.deb ...
+Unpacking tor (0.3.2.10-1) ...
+dpkg: dependency problems prevent configuration of tor:
+ tor depends on libevent-2.1-6 (>= 2.1.8-stable); however:
+  Package libevent-2.1-6 is not installed.
+ tor depends on libssl1.1 (>= 1.1.0); however:
+  Package libssl1.1 is not installed.
+
+dpkg: error processing package tor (--install):
+ dependency problems - leaving unconfigured
+Processing triggers for man-db (2.10.2-1) ...
+Errors were encountered while processing:
+ tor
+
+МОИ ПОЯСНЕНИЯ
+1. зависимость в предустановке пакета ibevent-2.1-6 и пакета libssl1.1
+2. ошибка "rocessing triggers for man-db (2.10.2-1)" мне не понятна: в курсе этого нет, но если гуглить, то это какой инстурмент-триггер, который павышает работу с помощью, не обязателен и его можно удалять. 
+
+Моя стратегия:
+1. установить пакет ibevent-2.1-6 и пакет libssl1.1
+2. повторить команду установки tor

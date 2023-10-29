@@ -1,0 +1,13 @@
+max@ws01:~/linux-vm/4$ sudo apt remove -y libjs-jquery-jush
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  javascript-common libflashrom1 libftdi1-2 libjs-jquery libllvm13
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  libjs-jquery-jush
+0 upgraded, 0 newly installed, 1 to remove and 26 not upgraded.
+After this operation, 238 kB disk space will be freed.
+(Reading database ... 205922 files and directories currently installed.)
+Removing libjs-jquery-jush (12-3) ...

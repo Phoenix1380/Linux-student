@@ -1,0 +1,16 @@
+для начала воспользовался переводчиком  - чтоб определить критерий поиска
+
+команда поиска
+max@ws01:~/linux-vm/4$ apt search jquery syntax highlighting
+Sorting... Done
+Full Text Search... Done
+libjs-jquery-jush/jammy,jammy 12-3 all
+  jQuery Syntax Highlighter
+
+установка
+из-за конфликтов и взаимосвязей выполнил предлагаемую команду 
+
+max@ws01:~/linux-vm/4$ sudo apt --fix-broken install
+после этого снова комануд на установку 
+max@ws01:~/linux-vm/4$ sudo apt install -f libjs-jquery-jush
+успешно
