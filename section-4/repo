@@ -1,0 +1,3 @@
+max@ws01:~/linux-vm/4$ sudo add-apt-repository --remove jammy-security universe
+[sudo] password for max: 
+Unable to handle repository shortcut 'jammy-security universe'
