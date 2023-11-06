@@ -1,0 +1,1 @@
+max@ws01:~/Linux-student/section-5/docs$ cat copyright | awk '{print $1}'| grep -e [0-9] >> strings
